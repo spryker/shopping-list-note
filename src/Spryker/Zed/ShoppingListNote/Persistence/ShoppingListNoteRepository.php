@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class ShoppingListNoteRepository extends AbstractRepository implements ShoppingListNoteRepositoryInterface
 {
-    /**
-     * @param int $idShoppingListItem
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer|null
-     */
     public function findShoppingListItemNoteByFkShoppingListItem(int $idShoppingListItem): ?ShoppingListItemNoteTransfer
     {
         $shoppingListItemNote = $this->getFactory()

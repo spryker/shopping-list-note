@@ -21,10 +21,5 @@ interface ShoppingListItemExpanderInterface
      */
     public function expandItem(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListItemTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function expandItemCollection(ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer): ShoppingListItemCollectionTransfer;
 }

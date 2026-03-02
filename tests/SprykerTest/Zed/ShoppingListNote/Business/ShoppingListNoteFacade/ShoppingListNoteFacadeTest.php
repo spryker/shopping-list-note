@@ -58,9 +58,6 @@ class ShoppingListNoteFacadeTest extends Unit
      */
     protected $productTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -95,9 +92,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->tester->haveProductInStock([StockProductTransfer::SKU => $this->productTransfer->getSku()]);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveShoppingListItemNoteForShoppingListItemAddsNoteForShoppingListItem(): void
     {
         // Arrange
@@ -117,9 +111,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertEquals($shoppingListItemNoteTransfer, $storedShoppingListItemNoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShoppingListItemNoteByIdShoppingListItemGetsNoteByIdShoppingList(): void
     {
         // Arrange
@@ -139,9 +130,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertEquals($shoppingListItemNoteTransfer, $storedShoppingListItemNoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveShoppingListItemNoteForShoppingListItemDeletesShoppingListNoteWithEmptyNote(): void
     {
         // Arrange
@@ -161,9 +149,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertNull($storedShoppingListItemNoteTransfer->getIdShoppingListItemNote());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteShoppingListItemNoteDeletesNoteFromShoppingListItem(): void
     {
         // Arrange
@@ -182,9 +167,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertNull($storedShoppingListItemNoteTransfer->getIdShoppingListItemNote());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandShoppingListExpandsShoppingListItemWithNote(): void
     {
         // Arrange
@@ -198,9 +180,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertNotNull($expandedShoppingListItemTransfer->getShoppingListItemNote());
     }
 
-    /**
-     * @return void
-     */
     public function testMapItemCartNoteToShoppingListItemNote(): void
     {
         // Arrange
@@ -215,9 +194,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertSame(static::CART_TEST_NOTE, $mappedShoppingListItemTransfer->getShoppingListItemNote()->getNote());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveShoppingListItemNotesForShoppingListItemCollection(): void
     {
         // Arrange
@@ -238,9 +214,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertNotNull($storedShoppingListItemNoteTransfer->getIdShoppingListItemNote());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandShoppingListItemCollectionWithProductOptionsExpandsShoppingListItemWithNote(): void
     {
         // Arrange
@@ -255,11 +228,6 @@ class ShoppingListNoteFacadeTest extends Unit
         $this->assertNotNull($expandedShoppingListItemCollectionTransfer->getItems()[0]->getShoppingListItemNote());
     }
 
-    /**
-     * @param array $shoppingListItemTransfers
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     protected function createShoppingListItemCollectionTransfer(array $shoppingListItemTransfers = []): ShoppingListItemCollectionTransfer
     {
         $shoppingListItemCollectionTransfer = new ShoppingListItemCollectionTransfer();
@@ -271,11 +239,6 @@ class ShoppingListNoteFacadeTest extends Unit
         return $shoppingListItemCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer
-     */
     protected function createShoppingListItemNote(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListItemNoteTransfer
     {
         return (new ShoppingListItemNoteBuilder(([

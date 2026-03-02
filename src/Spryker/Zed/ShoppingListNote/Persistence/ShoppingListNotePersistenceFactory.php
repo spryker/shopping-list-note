@@ -19,17 +19,11 @@ use Spryker\Zed\ShoppingListNote\Persistence\Propel\Mapper\ShoppingListItemNoteM
  */
 class ShoppingListNotePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNoteQuery
-     */
     public function createShoppingListItemNoteQuery(): SpyShoppingListItemNoteQuery
     {
         return SpyShoppingListItemNoteQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListNote\Persistence\Propel\Mapper\ShoppingListItemNoteMapperInterface
-     */
     public function createShoppingListItemNoteMapper(): ShoppingListItemNoteMapperInterface
     {
         return new ShoppingListItemNoteMapper();

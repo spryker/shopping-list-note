@@ -12,11 +12,5 @@ use Generated\Shared\Transfer\ShoppingListItemTransfer;
 
 interface ShoppingListItemToItemMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function mapShoppingListItemNoteToItemCartNote(ShoppingListItemTransfer $shoppingListItemTransfer, ItemTransfer $itemTransfer): ItemTransfer;
 }

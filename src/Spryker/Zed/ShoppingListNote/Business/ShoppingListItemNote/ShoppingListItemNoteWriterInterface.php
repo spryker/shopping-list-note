@@ -13,25 +13,10 @@ use Generated\Shared\Transfer\ShoppingListItemTransfer;
 
 interface ShoppingListItemNoteWriterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return void
-     */
     public function deleteShoppingListItemNoteById(ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     public function saveShoppingListItemNoteForShoppingListItem(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListItemTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function saveShoppingListItemNoteForShoppingListItemBulk(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer;

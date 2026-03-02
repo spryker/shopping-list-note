@@ -25,9 +25,6 @@ use Spryker\Zed\ShoppingListNote\Business\ShoppingListItemNote\ShoppingListItemN
  */
 class ShoppingListNoteBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ShoppingListNote\Business\ShoppingListItemNote\ShoppingListItemNoteReaderInterface
-     */
     public function createShoppingListNoteReader(): ShoppingListItemNoteReaderInterface
     {
         return new ShoppingListItemNoteReader(
@@ -35,9 +32,6 @@ class ShoppingListNoteBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListNote\Business\ShoppingListItemNote\ShoppingListItemNoteWriterInterface
-     */
     public function createShoppingListNoteWriter(): ShoppingListItemNoteWriterInterface
     {
         return new ShoppingListItemNoteWriter(
@@ -45,17 +39,11 @@ class ShoppingListNoteBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListNote\Business\ShoppingListItemNote\ShoppingListItemExpanderInterface
-     */
     public function createShoppingListItemExpander(): ShoppingListItemExpanderInterface
     {
         return new ShoppingListItemExpander($this->createShoppingListNoteReader());
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListNote\Business\Mapper\ItemToShoppingListItemMapperInterface
-     */
     public function createItemToShoppingListItemMapper(): ItemToShoppingListItemMapperInterface
     {
         return new ItemToShoppingListItemMapper();

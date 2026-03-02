@@ -34,9 +34,6 @@ class ShoppingListNoteBusinessTester extends Actor
 {
     use _generated\ShoppingListNoteBusinessTesterActions;
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     public function createCompany(): CompanyTransfer
     {
         return $this->haveCompany(
@@ -49,11 +46,6 @@ class ShoppingListNoteBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     public function createCompanyBusinessUnit(CompanyTransfer $companyTransfer): CompanyBusinessUnitTransfer
     {
         return $this->haveCompanyBusinessUnit(
@@ -66,11 +58,6 @@ class ShoppingListNoteBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function createShoppingList(CompanyUserTransfer $companyUserTransfer): ShoppingListTransfer
     {
         return $this->haveShoppingList([
@@ -79,12 +66,6 @@ class ShoppingListNoteBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $product
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     public function createShoppingListItem(ShoppingListTransfer $shoppingListTransfer, ProductConcreteTransfer $product): ShoppingListItemTransfer
     {
         return $this->haveShoppingListItem([

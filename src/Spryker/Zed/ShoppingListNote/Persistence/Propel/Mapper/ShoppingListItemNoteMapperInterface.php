@@ -16,23 +16,11 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 interface ShoppingListItemNoteMapperInterface
 {
-    /**
-     * @param \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNote $shoppingListItemNote
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer
-     */
     public function mapShoppingListItemNoteTransfer(
         SpyShoppingListItemNote $shoppingListItemNote,
         ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
     ): ShoppingListItemNoteTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     * @param \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNote $shoppingListItemNoteEntity
-     *
-     * @return \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNote
-     */
     public function mapShoppingListItemNoteTransferToEntity(
         ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer,
         SpyShoppingListItemNote $shoppingListItemNoteEntity

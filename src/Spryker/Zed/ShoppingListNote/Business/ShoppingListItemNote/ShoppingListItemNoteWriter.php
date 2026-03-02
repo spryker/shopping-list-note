@@ -19,29 +19,16 @@ class ShoppingListItemNoteWriter implements ShoppingListItemNoteWriterInterface
      */
     protected $shoppingListNoteEntityManager;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListNote\Persistence\ShoppingListNoteEntityManagerInterface $shoppingListNoteEntityManager
-     */
     public function __construct(ShoppingListNoteEntityManagerInterface $shoppingListNoteEntityManager)
     {
         $this->shoppingListNoteEntityManager = $shoppingListNoteEntityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return void
-     */
     public function deleteShoppingListItemNoteById(ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer): void
     {
         $this->deleteShoppingListItemNoteTransfer($shoppingListItemNoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     public function saveShoppingListItemNoteForShoppingListItem(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListItemTransfer
     {
         $shoppingListItemNote = $shoppingListItemTransfer->getShoppingListItemNote();
@@ -56,22 +43,12 @@ class ShoppingListItemNoteWriter implements ShoppingListItemNoteWriterInterface
         return $shoppingListItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function saveShoppingListItemNoteForShoppingListItemBulk(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer {
         return $this->saveShoppingListItemNoteTransfersInBulk($shoppingListItemCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer|null
-     */
     protected function saveShoppingListItemNoteTransfer(ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer): ?ShoppingListItemNoteTransfer
     {
         if (!$shoppingListItemNoteTransfer->getNote()) {
@@ -83,11 +60,6 @@ class ShoppingListItemNoteWriter implements ShoppingListItemNoteWriterInterface
         return $this->shoppingListNoteEntityManager->saveShoppingListItemNote($shoppingListItemNoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return void
-     */
     protected function deleteShoppingListItemNoteTransfer(ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer): void
     {
         if ($shoppingListItemNoteTransfer->getIdShoppingListItemNote()) {
@@ -95,11 +67,6 @@ class ShoppingListItemNoteWriter implements ShoppingListItemNoteWriterInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return void
-     */
     protected function deleteShoppingListItemNotesWithoutNoteValueInBulk(ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer): void
     {
         $shoppingListItemNoteIds = [];
@@ -115,11 +82,6 @@ class ShoppingListItemNoteWriter implements ShoppingListItemNoteWriterInterface
         $this->shoppingListNoteEntityManager->deleteShoppingListItemNoteByShoppingListItemNoteIds($shoppingListItemNoteIds);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     protected function saveShoppingListItemNoteTransfersInBulk(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer {

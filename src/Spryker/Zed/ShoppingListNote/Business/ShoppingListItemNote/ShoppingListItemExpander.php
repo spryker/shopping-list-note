@@ -19,9 +19,6 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
      */
     protected $shoppingListItemNoteReader;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListNote\Business\ShoppingListItemNote\ShoppingListItemNoteReaderInterface $shoppingListItemNoteReader
-     */
     public function __construct(ShoppingListItemNoteReaderInterface $shoppingListItemNoteReader)
     {
         $this->shoppingListItemNoteReader = $shoppingListItemNoteReader;
@@ -44,11 +41,6 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
         return $shoppingListItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function expandItemCollection(ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer): ShoppingListItemCollectionTransfer
     {
         $shoppingListItemNoteTransfers = $this->shoppingListItemNoteReader

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ShoppingListItemNoteTransfer;
 
 interface ShoppingListNoteRepositoryInterface
 {
-    /**
-     * @param int $idShoppingListItem
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer|null
-     */
     public function findShoppingListItemNoteByFkShoppingListItem(int $idShoppingListItem): ?ShoppingListItemNoteTransfer;
 
     /**

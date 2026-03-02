@@ -19,19 +19,11 @@ class ShoppingListItemNoteReader implements ShoppingListItemNoteReaderInterface
      */
     protected $shoppingListNoteRepository;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListNote\Persistence\ShoppingListNoteRepositoryInterface $shoppingListNoteRepository
-     */
     public function __construct(ShoppingListNoteRepositoryInterface $shoppingListNoteRepository)
     {
         $this->shoppingListNoteRepository = $shoppingListNoteRepository;
     }
 
-    /**
-     * @param int $idShoppingListItem
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer
-     */
     public function getShoppingListItemNoteByIdShoppingListItem(int $idShoppingListItem): ShoppingListItemNoteTransfer
     {
         $shoppingListItemNoteTransfer = $this->shoppingListNoteRepository

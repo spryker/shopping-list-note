@@ -18,11 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ShoppingListNoteEntityManager extends AbstractEntityManager implements ShoppingListNoteEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemNoteTransfer
-     */
     public function saveShoppingListItemNote(ShoppingListItemNoteTransfer $shoppingListItemNoteTransfer): ShoppingListItemNoteTransfer
     {
         $shoppingListItemNoteEntity = $this->getFactory()
@@ -40,11 +35,6 @@ class ShoppingListNoteEntityManager extends AbstractEntityManager implements Sho
         return $shoppingListItemNoteTransfer;
     }
 
-    /**
-     * @param int $idShoppingListItemNote
-     *
-     * @return void
-     */
     public function deleteShoppingListItemNoteById(int $idShoppingListItemNote): void
     {
         $this->getFactory()
@@ -66,11 +56,6 @@ class ShoppingListNoteEntityManager extends AbstractEntityManager implements Sho
             ->delete();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function saveShoppingListItemNoteInBulk(ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer): ShoppingListItemCollectionTransfer
     {
         $shoppingListItemNoteObjectCollection = new ObjectCollection();
@@ -104,11 +89,6 @@ class ShoppingListNoteEntityManager extends AbstractEntityManager implements Sho
             );
     }
 
-    /**
-     * @param \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNote $shoppingListItemNoteEntity
-     *
-     * @return \Orm\Zed\ShoppingListNote\Persistence\SpyShoppingListItemNote
-     */
     protected function preventPrimaryKeyDuplication(SpyShoppingListItemNote $shoppingListItemNoteEntity): SpyShoppingListItemNote
     {
         $shoppingListItemNoteEntity->setNew(false);

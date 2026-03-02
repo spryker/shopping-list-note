@@ -16,11 +16,6 @@ class ShoppingListNoteHelper extends Module
 {
     use LocatorHelperTrait;
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     public function haveShoppingListItem(array $seed = []): ShoppingListItemTransfer
     {
         $shoppingListItemTransfer = (new ShoppingListItemBuilder($seed))->build();

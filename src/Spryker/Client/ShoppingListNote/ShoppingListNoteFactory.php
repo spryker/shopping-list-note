@@ -14,9 +14,6 @@ use Spryker\Client\ShoppingListNote\Mapper\ShoppingListItemToItemMapperInterface
 
 class ShoppingListNoteFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ShoppingListNote\Mapper\ShoppingListItemToItemMapperInterface
-     */
     public function getShoppingListItemToItemMapper(): ShoppingListItemToItemMapperInterface
     {
         return new ShoppingListItemToItemMapper(
@@ -24,9 +21,6 @@ class ShoppingListNoteFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ShoppingListNote\Dependency\Client\ShoppingListNoteToCartClientInterface
-     */
     public function getCartClient(): ShoppingListNoteToCartClientInterface
     {
         return $this->getProvidedDependency(ShoppingListNoteDependencyProvider::CLIENT_CART);
